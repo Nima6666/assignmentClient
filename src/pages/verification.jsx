@@ -27,7 +27,10 @@ export default function VerifyAccount() {
     } else {
       setServerMessage({});
     }
-  }, [timeLeft]);
+    if (!verificationId) {
+      navigate("/");
+    }
+  }, [timeLeft, verificationId, navigate]);
 
   const formatTime = (ms) => {
     const seconds = Math.floor((ms / 1000) % 60);

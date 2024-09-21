@@ -22,10 +22,13 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/resetpassword" element={<ChangePassword />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
+
         <Route
           path="/password_reset/:userId/:resetKey"
           element={<SetNewPassword />}
         />
+
+        <Route path="/password_reset" element={<SetNewPassword />} />
 
         <Route path="/payment/success" element={<PaymentSuccess />} />
 
@@ -35,6 +38,8 @@ function App() {
           element={<VerifyAccount />}
         />
         <Route path="/billing" element={<Billing />} />
+
+        <Route path="/google" element={<GetGoogleUserByToken />} />
 
         <Route path="/google/:accessToken" element={<GetGoogleUserByToken />} />
 
