@@ -12,6 +12,8 @@ export default function VerifyAccount() {
 
   const token = localStorage.getItem("token");
 
+  const navigate = useNavigate();
+
   const [verifying, setVerifying] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState();
@@ -27,9 +29,6 @@ export default function VerifyAccount() {
     } else {
       setServerMessage({});
     }
-    if (!verificationId) {
-      navigate("/");
-    }
   }, [timeLeft, verificationId, navigate]);
 
   const formatTime = (ms) => {
@@ -42,8 +41,6 @@ export default function VerifyAccount() {
       "0"
     )}:${String(seconds).padStart(2, "0")}`;
   };
-
-  const navigate = useNavigate();
 
   const [sending, setSending] = useState();
 
