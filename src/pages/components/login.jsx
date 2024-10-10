@@ -41,6 +41,7 @@ const Login = () => {
         const formData = {
           email,
           password,
+          recaptchaToken: recaptchaValue,
         };
 
         const response = await axios.post(
